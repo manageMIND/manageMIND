@@ -1,7 +1,7 @@
 // load in all the environment variables
 if (process.env.NODE_ENV !== 'production') {
     require('dotenv').config()
-}
+} 
 
 //installs express, and initializes a port at port 3000
 const express = require('express');
@@ -12,6 +12,8 @@ const passport = require('passport');
 const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
+
+// const ejsFileJavaScript = require('./index');
 
 const initializePassport = require('./passport-config');
 //calls this method from the passport-config.js file 
@@ -41,9 +43,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(methodOverride('_method'));
 
+app.use('/css', express.static('css'));
+
+const date = new Date();
+const year = date.getFullYear();
+const month = date.getMonth() + 1;
+const day = date.getDate();
+const currDate = month + "/" + day + "/" + year;
+
 //the home page route
 app.get('/', checkAuthenticated, (req, res) => {
-    res.render('index.ejs', { name: req.user.name });
+    res.render('index.ejs', { name: req.user.name, currdate: currDate });
 });
 
 app.get('/login', checkNotAuthenticated, (req, res) => {
@@ -98,5 +108,5 @@ function checkNotAuthenticated(req, res, next) {
     }
     next()
 }
-
-app.listen(3002); 
+ 
+app.listen(3002);  
