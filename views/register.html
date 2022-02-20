@@ -22,12 +22,15 @@
       href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
       rel="stylesheet"
     />
+
+    <!-- favicon -->
+    <link rel="icon" href="..favicon.ico"/>
   </head>
   <body>
     <!-- going to post to a route with the name /register inside our server -->
     <div class="home-page col-4 .mx-auto">
       <h1 class="home-page-entry">Sign-up</h1>
-      <form id="register-form">
+      <form action="/register" method="POST">
         <div class="home-page-entry">
           <input
             class="input-entry home-page-entry"
@@ -42,11 +45,11 @@
         <div class="home-page-entry">
           <input
             class="input-entry home-page-entry"
-            type="text"
+            type="email"
             id="email"
-            name="text"
+            name="email"
             value
-            placeholder="username"
+            placeholder="Email"
             required
           />
         </div>
@@ -67,6 +70,5 @@
         </button>
       </form>
     </div>
-    <script type="module" src="../register.js"></script>
   </body>
 </html>

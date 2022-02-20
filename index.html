@@ -22,77 +22,90 @@
       href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
       rel="stylesheet"
     />
+
+    <!-- favicon -->
+    <link rel="icon" href="images/Logo1.png" />
   </head>
   <body class="main-app-body">
     <div class="col-8 mx-auto">
-    <div class="logout">
-      <form action="/logout?_method=DELETE" method="POST">
-        <button class="btn logout-btn" type="submit">Log Me Out</button>
-      </form>  
-    </div>
-    <div class="main-application">
-      <!-- <%  %> renders out a variable -->
-      <div class="intro-name">
-        <h4 id="username" class="username">Hello, {Name Here}!</h4>
-        <span>Today's date is</span>
-        <span id="current-date"></span>
+      <div class="logout">
+        <form action="/logout?_method=DELETE" method="POST">
+          <button class="btn logout-btn" type="submit">Log Me Out</button>
+        </form>
       </div>
-
-      <div class="outer-container">
-
-        <!-- page header display -->
-        <h3 class="top-text" id="question-master">What's the plan today?</h3>
-        <div class="container" id="add-task-block">
-          <input class="no-outline" id="input-field" type="text" />
-          <button class="btn button-styling" id="add-task">Add</button>
+      <div class="main-application">
+        <!-- <%  %> renders out a variable -->
+        <div class="intro-name">
+          <h4 id="username" class="username">Hello, {Name Here}!</h4>
+          <span>Today's date is</span>
+          <span id="current-date"></span>
         </div>
 
-        <!-- never changes -->
-        <div class="task-items" id="task-container"></div>
-      </div>
+        <img class="logo logo-main" src="../images/Logo1.png" alt="logo" />
 
-      <!-- FIRST PAGE -->
-      <div id="add-page-display">
-        <button class="btn button-styling" id="next-button">Next</button>
-      </div>
+        <div class="outer-container">
+          <!-- page header display -->
+          <h3 class="top-text" id="question-master">
+            What's the plan for today?
+          </h3>
+          <div class="container" id="add-task-block">
+            <input class="no-outline" id="input-field" type="text" />
+            <button class="btn button-styling" id="add-task">Add</button>
+          </div>
 
+          <!-- never changes -->
+          <div class="task-items" id="task-container"></div>
+        </div>
 
-      <!-- SECOND PAGE -->
-      <div id="change-page-display">
-        <h3>Recommendations:</h3>
-        <div id="recommendations-div"></div>
-        <div>
-        <button class="btn button-styling" id="change-button">Change</button>
+        <!-- FIRST PAGE -->
+        <div id="add-page-display">
+          <button class="btn button-styling" id="next-button">Next</button>
+        </div>
 
-        <button class="btn button-styling" id="next-reflect-button">Next</button>
-      </div>
-      </div>
+        <!-- SECOND PAGE -->
+        <div id="change-page-display">
+          <h3>Recommendations:</h3>
+          <div id="recommendations-div"></div>
+          <div>
+            <button class="btn button-styling" id="change-button">
+              Change
+            </button>
 
-      
-      <!-- THIRD PAGE -->
-      <div id="reflection-page-display">
-        
-        <div id="happy-container">
-          <h5 id="happy-text">
-            On a scale of 1-10 (10 being the highest), how happy did you feel today?
-          </h5>
-          <div class="happy-container">
-            <input class="no-outline" id="happy-input-field" type="text" />
+            <button class="btn button-styling" id="next-reflect-button">
+              Next
+            </button>
           </div>
         </div>
 
-        <div id="explain-container">
-          <h3 id="explain-day">Want to explain?</h3>
-          <div class="container">
-            <textarea class="input-styling" id="explain-input-field" name="Text1" cols="40" rows="5"></textarea>
+        <!-- THIRD PAGE -->
+        <div id="reflection-page-display">
+          <div id="happy-container">
+            <h5 id="happy-text">
+              On a scale of 1-10 (10 being the highest), how happy did you feel
+              today?
+            </h5>
+            <div class="happy-container">
+              <input class="no-outline" id="happy-input-field" type="text" />
+            </div>
           </div>
-        </div>
-        
-        <button class="btn button-styling" id="submit-button">Submit</button>
-      </div>
 
+          <div id="explain-container">
+            <h3 id="explain-day">Want to explain?</h3>
+            <div class="container">
+              <textarea
+                class="input-styling"
+                id="explain-input-field"
+                name="Text1"
+                cols="40"
+                rows="5"
+              ></textarea>
+            </div>
+          </div>
+
+          <button class="btn button-styling" id="submit-button">Submit</button>
+        </div>
+      </div>
     </div>
-  </div>
     <!-- JavaScript -->
     <script type="module" src="index.js"></script>
   </body>
