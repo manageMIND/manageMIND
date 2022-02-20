@@ -19,7 +19,7 @@ var toReflectButton = document.getElementById("next-reflect-button");
 var topicText = document.getElementById("question-master");
 
 const user = sessionStorage.getItem('user');
-let usernameLine = document.getElementById('username')
+let usernameLine = document.getElementById('username');
 
 usernameLine.innerText = "Welcome, " + user + "!";
 
@@ -54,9 +54,13 @@ nextButton.addEventListener("click", function () {
     var change_Display = document.getElementById("change-page-display");
     console.log("clicked");
 
-    recommendations = getRecommendations(data)
+    getRecommendations(data)
     .then((r) => {
-        
+        let result = r.text();
+
+        result.then((stress) => {
+            console.log(stress, " stress");
+        })
     })
 
     add_Page.style.display = "none"; 
