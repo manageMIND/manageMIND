@@ -13,8 +13,6 @@ const flash = require('express-flash');
 const session = require('express-session');
 const methodOverride = require('method-override');
 
-// const ejsFileJavaScript = require('./index');
-
 const initializePassport = require('./passport-config');
 //calls this method from the passport-config.js file 
 initializePassport(

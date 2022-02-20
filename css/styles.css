@@ -24,6 +24,16 @@ h6 {
     margin: auto;
 }
 
+.button-styling {
+    background-color: #948e8d;
+    height: 36px;
+    width: 100px;
+}
+
+.button-styling:hover {
+    background-color: #cac2c0;
+}
+
 /*home page with login*/
 .home-page {
     text-align: center;
@@ -55,45 +65,93 @@ h6 {
     width: 25%;
 }
 
-/*main page with the todo*/
+
+/*main page with the tasks list*/
 .main-app-body {
     width: 100%;
     height: 100%;
-    position: relative;
-    /* text-align: center; */
-}
-
-
-.main-application {
-    position: absolute;
-    background-color: aquamarine;    
-    top: 35%;
-
-    left: 27%;
-    /* transform: translate(-50%, -50%); */
-
+    padding: 0;
+    padding-top: 1rem;
+    /* position: relative; */
     text-align: center;
-    background-color: #E8D9CA;
-    width: 700px;
-    height: 620px;
+}
+
+.task-styles {
+    margin: 0, 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.intro-name {
+    text-align: left;
+    padding-top: 1rem;
+    padding-left: 2rem;
+}
+
+.outer-container {
+    text-align: center;
+}
+
+.container {
+    /* background-color: red; */
+    text-align: center;
+    width: 600px;
+}
+
+.top-text {
+    padding-top: 2rem;
+}
+
+.logout {
     border-radius: 10px;
+    margin-left: auto;
+    margin-right: 0;
+    padding-bottom: 5px;
+    text-align: right;
 }
-
-.user-name {
-    /* left: 500px; */
-}
-
-/* .main-application h1 {
-    font-family: 'Raleway', sans-serif;
-} */
 
 .logout-btn {
-    /* text-align: center; */
+    background-color: #948e8d;
+}
+
+.logout-btn:hover {
+    background-color: #cac2c0;
+}
+
+#input-field {
+    width: 280px;
+    height: 36px;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    border-radius: 5px;
+}
+
+#input-field:focus {
+    outline: none;
+}
+
+.task-items {
+    text-align: left;
+    height: 300px;
+    padding-top: 1rem;
+    overflow: auto;
+    width: 60%;
+    margin: auto;
+}
+
+p:hover {
+    background-color: #cac2c0;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.main-application {
+    text-align: center;
+    background-color: #E8D9CA;
+    height: 650px;
     border-radius: 10px;
-    position: absolute;
-    left: 42%;
-    /* bottom: 10px; */
-    top: 20px;
 }
 
 .todo-list-items {
@@ -102,4 +160,35 @@ h6 {
     padding: 20px 20px;
     border-radius: 10px;
     background-color: white;
+}
+
+
+/* setting the default display */
+
+/* Page 1 buttons etc */
+#change-page-display {
+    display: none;
+}
+
+/* Page 2 buttons etc */
+#reflection-page-display {
+    display: none;
+}
+
+#recommendations-div {
+    height: 50px;
+}
+
+/* Page 3 buttons etc */
+#happy-input-field {
+    width: 40px;
+}
+
+#explain-input-field {
+    width: 85%;
+    height: 100px;
+}
+
+#third-page-buttons {
+    display: none;
 }
