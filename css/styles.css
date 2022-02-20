@@ -36,8 +36,15 @@ h6 {
 
 .input-styling {
     border-radius: 6px;
+    border-style:hidden;
+    padding: 10px;
 
 }
+
+.input-styling:focus {
+    outline: none;
+}
+
 
 /*home page with login*/
 .home-page {
@@ -155,8 +162,9 @@ p:hover {
 .main-application {
     text-align: center;
     background-color: #E8D9CA;
-    height: 650px;
+    height: auto;
     border-radius: 10px;
+    padding: 20px;
 }
 
 .todo-list-items {
@@ -194,6 +202,7 @@ p:hover {
 #explain-input-field {
     width: 85%;
     height: 100px;
+    overflow: auto;
 }
 
 #third-page-buttons {
