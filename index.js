@@ -1,3 +1,5 @@
+import { getRecommendations } from './mindService.js';
+
 // gets current date to display
 const date = new Date().toDateString();
 
@@ -15,6 +17,11 @@ var nextButton = document.getElementById("next-button");
 var changeButton = document.getElementById("change-button");
 var toReflectButton = document.getElementById("next-reflect-button");
 var topicText = document.getElementById("question-master");
+
+const user = sessionStorage.getItem('user');
+let usernameLine = document.getElementById('username')
+
+usernameLine.innerText = "Welcome, " + user + "!";
 
 addItemButton.addEventListener("click", function() {
     var newEntry = document.createElement("p");
@@ -45,6 +52,12 @@ nextButton.addEventListener("click", function () {
     var add_Page = document.getElementById("add-page-display");
     var addTask = document.getElementById("add-task-block");
     var change_Display = document.getElementById("change-page-display");
+    console.log("clicked");
+
+    recommendations = getRecommendations(data)
+    .then((r) => {
+        
+    })
 
     add_Page.style.display = "none"; 
     addTask.style.display = "none";

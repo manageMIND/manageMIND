@@ -6,7 +6,6 @@ if (process.env.NODE_ENV !== 'production') {
 //installs express, and initializes a port at port 3000
 const express = require('express');
 const app = express();
-const bcrypt = require('bcrypt');
 //npm i passport packages
 const passport = require('passport');
 const flash = require('express-flash');
@@ -55,7 +54,7 @@ app.get('/', checkAuthenticated, (req, res) => {
 });
 
 app.get('/login', checkNotAuthenticated, (req, res) => {
-    res.render('login.ejs');
+    res.render('login.html');
 });
 
 app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
@@ -65,6 +64,7 @@ app.post('/login', checkNotAuthenticated, passport.authenticate('local', {
 }))
 
 app.get('/register', checkNotAuthenticated, (req, res) => {
+    console.log("here");
     res.render('register.ejs');
 });
 
@@ -73,12 +73,10 @@ app.post('/register', checkNotAuthenticated, async (req, res) => {
     //we're using asynchronous code so we use a try catch block
     try {
         //hashes a password (10 is the standard wait time)
-        const hashedPassword = await bcrypt.hash(req.body.password, 10);
         users.push({
             id: Date.now().toString(),
             name: req.body.name,
             email: req.body.email,
-            password: hashedPassword
         })
         res.redirect('/login')
     } catch {
