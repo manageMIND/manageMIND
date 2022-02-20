@@ -34,6 +34,11 @@ h6 {
     background-color: #cac2c0;
 }
 
+.input-styling {
+    border-radius: 6px;
+
+}
+
 /*home page with login*/
 .home-page {
     text-align: center;
@@ -182,6 +187,8 @@ p:hover {
 /* Page 3 buttons etc */
 #happy-input-field {
     width: 40px;
+    border-radius: 6px;
+    border-style: hidden;
 }
 
 #explain-input-field {
